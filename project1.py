@@ -12,16 +12,18 @@ if(choice=="login"):
  userName = input("Enter your username: ") 
  if userName in users:
     password = input("Enter your Password: ") 
-    if password in users:
+    if password==users[userName]:
         print("Hello World")
+    
         #go to the function where users can create their contact lists
     else:
      for i in range(1, 4):
-        invalidPass= input("Invalid Password. Do you want to try again? Y||N") 
-        if(invalidPass=="Y"):
+        invalidPass= input("Invalid Password. Do you want to try again? Y||N : ") 
+        if(invalidPass== "Y" or "y"):
           password = input("Re-enter your Password: ")
         else:
-          print("Thank You!!! Good Bye!") 
+          print("Thank You!!! Good Bye!")
+          break 
  else:
     for i in range(1,3):
       invalidUser=input('Invalid User name. Do you want to try again? (y/n):')
